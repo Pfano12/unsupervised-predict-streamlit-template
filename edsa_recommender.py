@@ -208,9 +208,9 @@ def main():
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
         st.write("The type of recommender system we choose to use is collaborative filtering.")
-        st.info("""The measure of how well the model performs was defined by the RMSE score which is a value
-                 between 1 and 0. It is used to measure the differences between values predicted by the
-                 model and the values actually observed. The lower the RMSE, the more accurate the model""")
+        st.info("""The measure of how well the model performs was defined by the RMSE score.
+                   It is used to measure the differences between values predicted by the
+                   model and the values actually observed. The lower the RMSE, the more accurate the model""")
         st.write(""" Firstly, we used Singular Value Decomposition which is a method from linear algebra.
                      It reduces the number of features of a dataset by reducing the space dimension from
                      N-dimension to K-dimension (where K<N). In the context of the recommender system,
