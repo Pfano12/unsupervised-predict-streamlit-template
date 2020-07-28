@@ -211,26 +211,17 @@ def main():
         st.info("""The measure of how well the model performs was defined by the RMSE score which is a value
                  between 1 and 0. It is used to measure the differences between values predicted by the
                  model and the values actually observed. The lower the RMSE, the more accurate the model""")
-        st.write(""" Firstly, we used Principal Component Analysis which is a dimentionality reduction method
-                that is often used to reduce the dimensionality of large data sets, by transforming a large
-                set of variables into a smaller one that still contains most of the information in the large
-                set. We used it with Random Forest and XGBoost. The RMSE score we were striving for was expected
-                to be lower than 0.85
-                We then used Singular Value Decomposition whose purpose is to reduce a dataset containing a
-                large number of values to a dataset containing significantly fewer values, but which still
-                contains a large fraction of the variability present in the original data. This model gave us
-                a RMSE score of 0.81 which is lower than 0.85""")
+        st.write(""" Firstly, we used Singular Value Decomposition which is a method from linear algebra.
+                     It reduces the number of features of a dataset by reducing the space dimension from
+                     N-dimension to K-dimension (where K<N). In the context of the recommender system,
+                     the SVD is used as a collaborative filtering technique. We then used non-negative matrix
+                     factorization which is  a technique for obtaining low rank representation of matrices
+                     with non-negative or positive elements and we used SVDpp which is an extension of SVD""")
         st.markdown('RESULTS')
         from PIL import Image
-        xg = Image.open('resources/imgs/xg.PNG')
-        st.image(xg, caption='XGBoost RMSE score', width=500)
-        st.text("      ")
-        forest = Image.open('resources/imgs/forest.PNG')
-        st.image(forest,caption="Random forest RMSE score", width=500)
-        st.text("       ")
-        svd1 = Image.open("resources/imgs/svd.PNG")
-        st.image(svd1, caption="SVD RMSE score", width=500)
-        st.info("The model which gave best results is SVD with an RMSE score of 0.85")
+        mean_mod = Image.open('resources/imgs/mean_mod.PNG')
+        st.image(mean_mod, width=650)
+        st.info("The model which gave best results is SVD with an RMSE score of 0.81906")
 
     if page_selection =="About team 5":
         st.write('### Team 5')
